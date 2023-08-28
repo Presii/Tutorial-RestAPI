@@ -12,10 +12,10 @@ variables:
   azureSubscription: '24f37fde-be33-44d9-8e03-99a638e7fcd3'
 
   # Web app name
-  webAppName: 'learningjava'
+  webAppName: 'learningjavauat'
 
   # Environment name
-  environmentName: 'learningjava'
+  environmentName: 'learningjavauat'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -80,7 +80,7 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: learningjava'
+            displayName: 'Azure Web App Deploy: learningjavauat'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux

@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     //sh "mvn dependency:tree -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
-                    sleep 24s
+                    sleep time: 250, unit: 'MILLISECONDS'
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     //sh "mvn test -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
-                    sleep 60s
+                    sleep time: 250, unit: 'MILLISECONDS'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     //sh "mvn -X clean install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
-                    sleep 45s
+                    sleep time: 250, unit: 'MILLISECONDS'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     //sh "mvn -X clean install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
-                    sleep 30s
+                    sleep time: 250, unit: 'MILLISECONDS'
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     //sh "mvn -X clean install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
-                    sleep 60s
+                    sleep time: 250, unit: 'MILLISECONDS'
                 }
             }
         }

@@ -1,11 +1,24 @@
 pipeline {
     agent { label 'linux' }
     stages{
-        stage ("first stage") {
+        stage ("Setup") {
             steps {
                 script {
-                    sh "echo test"
-                    echo "testttt"
+                    sh "mvn dependency:tree -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+                }
+            }
+        }
+        stage ("Tests") {
+            steps {
+                script {
+                    sh "mvn test -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+                }
+            }
+        }
+        stage ("Build") {
+            steps {
+                script {
+                    sh "mvn -X clean install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
                 }
             }
         }

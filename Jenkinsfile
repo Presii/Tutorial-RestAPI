@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'linux' }
     stages{
-        stage {
+        stage ("first stage") {
             steps {
                 script {
                     sh "echo test"
